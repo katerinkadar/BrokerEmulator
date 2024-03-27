@@ -80,8 +80,8 @@ namespace FileBroker
                 File.Delete(requestFilePath);
 
                 // Извлекаем метод и путь из запроса
-                var method = requestContent.Split('\n')[0].Trim();
-                var path = requestContent.Split('\n')[1].Trim();
+                var method = requestContent.Split('"')[3].Trim();
+                var path = requestContent.Split('"')[7].Trim();
 
                 // Генерируем ключ для сохранения файла ответа
                 var responseKey = CalculateMd5Hash($"{method}{path}");
@@ -90,7 +90,7 @@ namespace FileBroker
                 await Task.Delay(TimeSpan.FromSeconds(2));
 
                 // Генерируем ответ
-                var responseContent = $"200 OK\nHello, {method} {path}!";
+                var responseContent = @"{StatusCode:'200', Body:'Привет, " + method + " " + path + "'}";
 
                 // Сохраняем файл ответа
                 var responseFilePath = Path.Combine(DirectoryPath, $"{responseKey}.resp");
