@@ -1,10 +1,8 @@
-Для работы надо скачать оба проекта в одну папку.
-Cloudfactory.BrokerEmulator
-и
-Cloudfactory.MessageBrokerCloudfactory.MessageBroker
+
 
 <html>
 <body lang="ru-RU" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; page-break-inside: avoid; margin-bottom: 0.11cm; page-break-before: auto; page-break-after: avoid"><a name="_qjqhi2gz239r"></a>
+<p>Для работы надо скачать оба проекта в одну папку: "Cloudfactory.BrokerEmulator" и "Cloudfactory.MessageBroker</p>
 <font size="6" style="font-size: 26pt"><b>Тестовое задание
 на бэк разработчика .NET</b></font></p>
 <h1 style="page-break-before: auto; page-break-after: auto"><a name="_g4vtminfk5q6"></a>
