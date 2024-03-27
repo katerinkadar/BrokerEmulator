@@ -9,7 +9,7 @@ namespace FileBroker
 {
     class Program
     {
-        private static readonly string DirectoryPath = @"C:\BrokerStorage\"; // Путь к директории хранилища
+        private static readonly string DirectoryPath = @"..\\TestFiles"; // Путь к директории хранилища
         private static readonly object QueueLock = new object(); // Объект для блокировки доступа к очереди запросов
         private static BlockingCollection<string> RequestQueue = new BlockingCollection<string>(); // Очередь запросов
 
@@ -20,9 +20,17 @@ namespace FileBroker
 
             while (true)
             {
+                if (!Directory.Exists(DirectoryPath))
+                {
+                    Directory.CreateDirectory(DirectoryPath); // Создаем директорию, если ее нет
+                }
                 // Получаем все файлы запросов в директории
                 var requestFiles = Directory.GetFiles(DirectoryPath, "*.req");
-
+               
+                var requestPath = Path.Combine(DirectoryPath, "338951b7e7607b65262fb051e7804d91.req");
+                if (File.Exists(requestPath)) {
+                  //  return null;
+                }
                 // Добавляем файлы в очередь запросов
                 foreach (var requestFile in requestFiles)
                 {
