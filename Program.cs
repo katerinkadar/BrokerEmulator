@@ -9,7 +9,7 @@ namespace FileBroker
 {
     class Program
     {
-        private static readonly string DirectoryPath = @"..\\TestFiles"; // Путь к директории хранилища
+        private static readonly string DirectoryPath = @"..\..\..\..\TestFilesAll"; // Путь к директории хранилища
         private static readonly object QueueLock = new object(); // Объект для блокировки доступа к очереди запросов
         private static BlockingCollection<string> RequestQueue = new BlockingCollection<string>(); // Очередь запросов
 
